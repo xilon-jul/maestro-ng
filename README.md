@@ -228,6 +228,11 @@ be placed on (by name). Additionally, it may define:
     host>: <destination in container>`. Each target can also be
     specified as a map `{target: <destination>, mode: <mode>}`, where
     `mode` is `ro` (read-only) or `rw` (read-write);
+  - `volumes_from`, for mounting volumes from other containers. This arguments accepts a list of
+    instances name. Instances referered as list item must be attached to the same ship as the one defining the
+    volumes_from key. 
+  - `container_volumes`, a list of container volumes only. Each list item defines the mount point eg: 
+    /path/in/container
   - `env`, for environment variables, as a map of `<variable name>:
     <value>` (variables defined at the instance level override variables
     defined at the service level);
